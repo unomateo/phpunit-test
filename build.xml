@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="phpunit" default="build">
+ <!-- By default, we assume all tools to be on the $PATH -->
+ <property name="toolsdir" value=""/>
+
+ <!-- Uncomment the following when the tools are in ${basedir}/vendor/bin -->
+ <!-- <property name="toolsdir" value="${basedir}/vendor/bin/"/> -->
+
+ <target name="build"
+         depends="phpunit"
+         description=""/>
+
+
+<target name="phpunit"
+         description="Run unit tests with PHPUnit">
+  <exec executable="phpunit" failonerror="true" />
+ </target>
+
+</project>
