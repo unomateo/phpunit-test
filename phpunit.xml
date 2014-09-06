@@ -1,0 +1,16 @@
+<phpunit 
+	bootstrap="index.php" 
+	colors="true"
+	testdox="true"
+	convertErrorsToExceptions="true"
+	>
+
+	<testsuite name="Model">
+       <directory suffix="Test.php">tests/models</directory>
+    </testsuite>
+
+    <testsuite name="Controller">
+       <directory suffix="Test.php">tests/controllers</directory>
+    </testsuite>
+
+</phpunit>

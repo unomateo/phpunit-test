@@ -1,0 +1,12 @@
+{
+    "name": "Matt.Dunlap/project",
+    "authors": [
+        {
+            "name": "Matt",
+            "email": "mattdunlap@thismoment.com"
+        }
+    ],
+    "require": {
+	"phpunit/phpunit":"*"
+    }
+}
