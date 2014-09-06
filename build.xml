@@ -7,8 +7,19 @@
  <!-- <property name="toolsdir" value="${basedir}/vendor/bin/"/> -->
 
  <target name="build"
-         depends="phpunit"
+         depends="phpunit,phpcs-ci"
          description=""/>
+
+<target name="prepare"
+         unless="prepare.done"
+         description="Prepare for build">
+  <mkdir dir="${basedir}/build/api"/>
+  <mkdir dir="${basedir}/build/coverage"/>
+  <mkdir dir="${basedir}/build/logs"/>
+  <mkdir dir="${basedir}/build/pdepend"/>
+  <mkdir dir="${basedir}/build/phpdox"/>
+  <property name="prepare.done" value="true"/>
+ </target>
 
 
 <target name="phpunit"
@@ -24,5 +35,18 @@
     <arg path="${basedir}/tests" />
   </exec>
 </target>
+
+<target name="phpcs-ci"
+         depends="prepare"
+         description="Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment.">
+  <exec executable="phpcs" output="/dev/null">
+   <arg value="--report=checkstyle" />
+   <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
+   <arg value="--standard=PSR2" />
+   <arg value="--extensions=php" />
+   <arg value="--ignore=autoload.php" />
+   <arg path="${basedir}/tests" />
+  </exec>
+ </target>
 
 </project>
