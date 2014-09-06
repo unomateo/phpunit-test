@@ -7,13 +7,18 @@
  <!-- <property name="toolsdir" value="${basedir}/vendor/bin/"/> -->
 
  <target name="build"
-         depends="phpunit"
+         depends="phpunit,phpcs"
          description=""/>
 
 
 <target name="phpunit"
          description="Run unit tests with PHPUnit">
   <exec executable="phpunit" failonerror="true" />
- </target>
+</target>
+
+<target name="phpcs"
+         description="check code standards">
+  <exec executable="phpcs" failonerror="true" />
+</target>
 
 </project>
