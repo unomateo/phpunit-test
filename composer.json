@@ -7,5 +7,6 @@
         }
     ],
     "require": {
+	"phpunit/phpunit":"*"
     }
 }
