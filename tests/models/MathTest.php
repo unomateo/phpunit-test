@@ -11,7 +11,7 @@ class Model_MathTest extends PHPUnit_Framework_TestCase {
 
     public function testAddSuccess(){
 
-            $this->assertEquals(5, Model_Math::add(2,3));
+            $this->assertEquals(6, Model_Math::add(2,3));
     }
     
     public function this_method($param) {
