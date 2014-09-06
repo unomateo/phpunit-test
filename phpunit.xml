@@ -1,7 +1,6 @@
 <phpunit 
 	bootstrap="index.php" 
 	colors="true"
-	testdox="true"
 	convertErrorsToExceptions="true"
 	>
 
