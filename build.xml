@@ -45,6 +45,7 @@
    <arg value="--standard=PSR2" />
    <arg value="--extensions=php" />
    <arg value="--ignore=autoload.php" />
+   <arg value="--tab-width=4" />
    <arg path="${basedir}/tests" />
   </exec>
  </target>
