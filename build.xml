@@ -18,7 +18,11 @@
 
 <target name="phpcs"
          description="check code standards">
-  <exec executable="phpcs" failonerror="true" />
+  <exec executable="phpcs" failonerror="true">
+    <arg path="${basedir}/models" />
+    <arg path="${basedir}/controllers" />
+    <arg path="${basedir}/tests" />
+  </exec>
 </target>
 
 </project>
